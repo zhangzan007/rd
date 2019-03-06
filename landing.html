@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/mobamcss.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+  <div class="top">
+      <div class="logo"><img src="images/logo.png" width="268" height="85"></div>
+      <div class="so">
+            <div class="so_te" ><a href="#"> 登录 </a> |<a href="#"> 免费注册</a></div>
+            <div class="search">
+             	<input name="" class="in_se" type="text" ><input name="" class="in_bot" type="">
+            </div>
+     </div>
+  </div>
+  <div class="nav"> 
+      <ul  id="nav">
+          <li><a href="#">首页</a></li>
+          <li  class="nav-item"><a href="#">房产项目</a>
+              <div class="nav-dropdown">
+					<div class="nav-dropdown-trending">
+						<dl>
+							<dd><a href="#">房产项目</a></dd> 
+							<dd><a href="#">房产项目</a></dd> 
+							<dd><a href="#">房产项目</a></dd> 
+							<dd><a href="#">房产项目</a></dd> 
+						</dl>
+					</div>
+				</div>
+          </li>
+          <li  class="nav-item"><a href="#">移民投资</a>
+              <div class="nav-dropdown">
+					<div class="nav-dropdown-trending">
+						<dl>
+							<dd><a href="#">移民投资</a></dd> 
+							<dd><a href="#">移民投资</a></dd> 
+							<dd><a href="#">移民投资</a></dd> 
+							<dd><a href="#">移民投资</a></dd> 
+						</dl>
+					</div>
+				</div>
+          </li>
+          <li  class="nav-item"><a href="#">瑞德商务</a>
+              <div class="nav-dropdown">
+					<div class="nav-dropdown-trending">
+						<dl>
+							<dd><a href="#">瑞德商务</a></dd> 
+							<dd><a href="#">瑞德商务</a></dd>
+                            <dd><a href="#">瑞德商务</a></dd> 
+							<dd><a href="#">瑞德商务</a></dd> 
+						</dl>
+					</div>
+				</div>
+          </li>
+          <li><a href="#">新闻中心</a></li>
+          <li><a href="#">诚聘英才</a></li>
+          <li  class="nav-item"><a href="#"> 联系我们</a>
+              <div class="nav-dropdown">
+					<div class="nav-dropdown-trending">
+						<dl>
+							<dd><a href="#">关于我们</a></dd> 
+							<dd><a href="#">联系我们</a></dd> 
+						</dl>
+					</div>
+				</div>
+          </li>
+      </ul>
+  </div>
+  
+  <div class="dlbg">
+        <div class="dl_box">
+             <div class="dl_left">
+                 <div class="tlie_dl">用户注册</div>
+                 <ul>
+                     <li><span>用&nbsp;&nbsp;户&nbsp;&nbsp;名：</span><input name="" type="text"></li>
+                     <li><span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</span><input name="" type="text"></li>
+                     <li><div class="bot_a"><a href="#">注&nbsp;&nbsp;册</a></div></li>
+                 </ul>
+             </div>
+             <div class="dl_right">
+                 <div class="tlie_dl">瑞德控股</div>
+                 <p>瑞德企业背景为澳洲三十多年的项目开发公司、以及政商公共关系公司，与澳大利亚政府部门以及其他国家政府部门保持着长期的友好关系，与澳大利亚企业以及海外企业、海外投资商也保持着长期的友好合作关系，并将继续致力于澳大利亚与其他国家的政治与商业合作，促进澳大利亚与其他国家长期保持友好合作关系为瑞德企业的终身事业！</p>
+                 <p>三十多年的成功经营见证了瑞德企业的辉煌业绩。瑞德总裁与企业的座右铭为：正确思维，努力工作。瑞德企业的商业理念为“利他”，能够为他人创造财富，才是瑞德企业的真正价值与财富！</p>
+                 <p>瑞德企业背景始建于上世纪七十年代，两代人的传承，丰富的商业资源，广阔的商业平台，直接并且高效的合作与沟通渠道，良好的信誉与业绩，庞大的集团团体协作，是瑞德企业屹立政商界将近四十年的企业优势。</p>             
+              </div>
+    </div>
+  </div>
+  
+  <div class="foot">
+       <div class="foot_box">
+            <div class="foot_logo"><img src="images/logofoot.png" width="268" height="85"></div>
+            <div class="foot_text">
+                  <p>电话：400-8292-000
+                  <p>邮箱：022-23309708</p>
+                  <p>地址：天津市河西区金皇大厦3208</p>
+                  <p>Copyright@2014 All Rights Reserved 澳洲瑞德控股集团天津分公司版权所有</p>
+                  <p>粤ICP备12079301号</p>
+            </div>
+       </div>  
+  </div>
+  
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+(function($){
+	$.fn.dropdown = function(settings){
+		var defaults = {
+			dropdownEl: '.dropdown-menu',
+			openedClass: 'dropdown-open',
+			delayTime: 100
+		}
+		var opts = $.extend(defaults, settings);
+		return this.each(function(){
+			var curObj = null;
+			var preObj = null;
+			var openedTimer = null;
+			var closedTimer = null;
+			$(this).hover(function(){
+				if(openedTimer)
+				clearTimeout(openedTimer);
+				curObj = $(this);
+				openedTimer = setTimeout(function(){
+					curObj.addClass(opts.openedClass).find(opts.dropdownEl).show();
+				},opts.delayTime);
+				preObj = curObj;
+			},function(){
+				if(openedTimer)
+				clearTimeout(openedTimer);
+				openedTimer = setTimeout(function(){
+					preObj.removeClass(opts.openedClass).find(opts.dropdownEl).hide();
+				},opts.delayTime);
+			});
+			//点击事件关闭菜单
+			$(this).bind('click', function(){
+				if(openedTimer)
+				clearTimeout(openedTimer);
+				openedTimer = setTimeout(function(){
+					preObj.removeClass(opts.openedClass).find(opts.dropdownEl).hide();
+				},opts.delayTime);
+			});
+		});
+	};
+})(jQuery);
+
+//下拉菜单
+$(document).ready(function(){
+	$('#nav .nav-item').dropdown({
+		dropdownEl:'.nav-dropdown',
+		openedClass:'hover'
+	});
+});
+</script> 
+</body>   
+</html>
+  

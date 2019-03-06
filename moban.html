@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/mobamcss.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+  <div class="top">
+      <div class="logo"><img src="images/logo.png" width="268" height="85"></div>
+      <div class="so">
+            <div class="so_te" ><a href="#"> 登录 </a> |<a href="#"> 免费注册</a></div>
+            <div class="search">
+             	<input name="" class="in_se" type="text" ><input name="" class="in_bot" type="">
+            </div>
+     </div>
+  </div>
+  <div class="nav"> 
+      <ul  id="nav">
+          <li><a href="#">首页</a></li>
+          <li  class="nav-item"><a href="#">房产项目</a>
+              <div class="nav-dropdown">
+					<div class="nav-dropdown-trending">
+						<dl>
+							<dd><a href="#">房产项目</a></dd> 
+							<dd><a href="#">房产项目</a></dd> 
+							<dd><a href="#">房产项目</a></dd> 
+							<dd><a href="#">房产项目</a></dd> 
+						</dl>
+					</div>
+				</div>
+          </li>
+          <li  class="nav-item"><a href="#">移民投资</a>
+              <div class="nav-dropdown">
+					<div class="nav-dropdown-trending">
+						<dl>
+							<dd><a href="#">移民投资</a></dd> 
+							<dd><a href="#">移民投资</a></dd> 
+							<dd><a href="#">移民投资</a></dd> 
+							<dd><a href="#">移民投资</a></dd> 
+						</dl>
+					</div>
+				</div>
+          </li>
+          <li  class="nav-item"><a href="#">瑞德商务</a>
+              <div class="nav-dropdown">
+					<div class="nav-dropdown-trending">
+						<dl>
+							<dd><a href="#">瑞德商务</a></dd> 
+							<dd><a href="#">瑞德商务</a></dd>
+                            <dd><a href="#">瑞德商务</a></dd> 
+							<dd><a href="#">瑞德商务</a></dd> 
+						</dl>
+					</div>
+				</div>
+          </li>
+          <li><a href="#">新闻中心</a></li>
+          <li><a href="#">诚聘英才</a></li>
+          <li  class="nav-item"><a href="#"> 联系我们</a>
+              <div class="nav-dropdown">
+					<div class="nav-dropdown-trending">
+						<dl>
+							<dd><a href="#">关于我们</a></dd> 
+							<dd><a href="#">联系我们</a></dd> 
+						</dl>
+					</div>
+				</div>
+          </li>
+      </ul>
+  </div>
+  
+  
+  <div class="foot">
+       <div class="foot_box">
+            <div class="foot_logo"><img src="images/logofoot.png" width="268" height="85"></div>
+            <div class="foot_text">
+                  <p>电话：400-8292-000
+                  <p>邮箱：022-23309708</p>
+                  <p>地址：天津市河西区金皇大厦3208</p>
+                  <p>Copyright@2014 All Rights Reserved 澳洲瑞德控股集团天津分公司版权所有</p>
+                  <p>粤ICP备12079301号</p>
+            </div>
+       </div>  
+  </div>
+  
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+(function($){
+	$.fn.dropdown = function(settings){
+		var defaults = {
+			dropdownEl: '.dropdown-menu',
+			openedClass: 'dropdown-open',
+			delayTime: 100
+		}
+		var opts = $.extend(defaults, settings);
+		return this.each(function(){
+			var curObj = null;
+			var preObj = null;
+			var openedTimer = null;
+			var closedTimer = null;
+			$(this).hover(function(){
+				if(openedTimer)
+				clearTimeout(openedTimer);
+				curObj = $(this);
+				openedTimer = setTimeout(function(){
+					curObj.addClass(opts.openedClass).find(opts.dropdownEl).show();
+				},opts.delayTime);
+				preObj = curObj;
+			},function(){
+				if(openedTimer)
+				clearTimeout(openedTimer);
+				openedTimer = setTimeout(function(){
+					preObj.removeClass(opts.openedClass).find(opts.dropdownEl).hide();
+				},opts.delayTime);
+			});
+			//点击事件关闭菜单
+			$(this).bind('click', function(){
+				if(openedTimer)
+				clearTimeout(openedTimer);
+				openedTimer = setTimeout(function(){
+					preObj.removeClass(opts.openedClass).find(opts.dropdownEl).hide();
+				},opts.delayTime);
+			});
+		});
+	};
+})(jQuery);
+
+//下拉菜单
+$(document).ready(function(){
+	$('#nav .nav-item').dropdown({
+		dropdownEl:'.nav-dropdown',
+		openedClass:'hover'
+	});
+});
+</script> 
+</body>   
+</html>
+  
